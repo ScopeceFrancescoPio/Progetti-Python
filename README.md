@@ -34,5 +34,5 @@ Clona la repo:
 
 ```bash
 git clone https://github.com/ScopeceFrancescoPio/Progetti-Python.git
-cd python-playground
+cd Progetti-Python
 ```
