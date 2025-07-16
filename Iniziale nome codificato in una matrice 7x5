@@ -1,0 +1,78 @@
+"""
+OBIETTIVO:
+Creare tramite una griglia 7x5 la prima lettera iniziale del nome
+"""
+
+#Inserire manualmente il nome per poi estrarre la prima lettera
+lettera_iniziale = list("Francesco")
+#print(lettera_iniziale[0]) #Test per la corretta visualizazione della lettera 
+
+'''
+TEORIA E PROCESSO DI RISOLUZIONE DEL PROBLEMA
+
+matrice = [
+  [0,0,0,0,0], #row 0
+  [0,0,0,0,0], #row 1 
+  [0,0,0,0,0], #row 2
+  [0,0,0,0,0], #row 3
+  [0,0,0,0,0], #row 4
+  [0,0,0,0,0], #row 5
+  [0,0,0,0,0], #row 6
+]
+#La matrice e' una lista di liste
+#Creando la prima lista (row 0) si crea la prima riga 
+#In base al numero di oggetti presenti nella riga si identificano 
+#le colonne.
+#Per modificare il valore in una colonna bisonga prima identificare 
+#la sua riga di appartenenza con la rispettiva posizione.
+
+
+Risultato finale da realizzare
+F F F F F -> 5 #row 0
+F         -> 1 #row 1
+F         -> 1 #row 2
+F F F     -> 3 #row 3
+F         -> 1 #row 4
+F         -> 1 #row 5
+F         -> 1 #row 6
+
+'''
+#Inserimento manuale dei singoli caratteri
+row0 = [lettera_iniziale[0]] * 5
+row1 = [lettera_iniziale[0]]
+row2 = [lettera_iniziale[0]]
+row3 = [lettera_iniziale[0]] * 3
+row4 = [lettera_iniziale[0]]
+row5 = [lettera_iniziale[0]]
+row6 = [lettera_iniziale[0]]
+
+#Inizializazione della lista che conterra' un vettore con le indicazioni di come ricreare la lettera
+row = [row0,row1,row2,row3,row4,row5,row6]
+
+#Creazione matrice contenete la soluzione del problema
+nome = []
+for i in range(len(row)): #Secondo la lunghezza di 'row' crea altrettante righe
+  nome.append(row[i])     #Per ogni elemento della lista row assegalo in una riga 
+
+#Stampa matrice togliendo formattazione lista
+for i in nome:
+    print(" ".join(str(valore) for valore in i))
+
+
+
+#Soluzione alternativa meglio performante ma usando una funzione
+def stampa_lettera(a):
+  riga=[
+    [a]*5,
+    [a],
+    [a],
+    [a]*3,
+    [a],
+    [a],
+    [a],
+    ]
+  for i in riga:
+    print(' '.join(str(val) for val in i))
+
+stampa_lettera(lettera_iniziale[0])
+
